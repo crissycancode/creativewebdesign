@@ -125,22 +125,22 @@
     <!-- START HERE -->
 
     <!-- TOAST BUTTON -->
-    <a class="btn">Show Toast</a>
+    <a class="btn" id="toast1">Show Toast</a>
 
     <!-- ROUNDED TOAST -->
-    <a class="btn">Rounded Toast</a>
+    <a class="btn" id="toast2">Rounded Toast</a>
 
     <!-- CALLBACK ON DISMISS -->
-    <a class="btn">Toast With Callback</a>
+    <a class="btn" id="toast3">Toast With Callback</a>
 
     <br>
     <br>
 
     <!-- TOOLTIPS -->
-    <a class="btn">Bottom Tooltip</a>
-    <a class="btn">Top Tooltip</a>
-    <a class="btn">Right Tooltip</a>
-    <a class="btn">Left Tooltip</a>
+    <a class="btn tooltipped" data-delay="1000" data-position="bottom" data-tooltip="I am a tooltip, with delay">Bottom Tooltip</a>
+    <a class="btn tooltipped" data-delay="1000" data-position="bottom" data-tooltip="I am a tooltip, with delay">Top Tooltip</a>
+    <a class="btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip, no delay">Right Tooltip</a>
+    <a class="btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip, no delay">Left Tooltip</a>
 
 
     <!-- END HERE -->
@@ -165,7 +165,20 @@
       });
 
       // JAVASCRIPT START HERE //
-
+      // RUN TOAST 
+      $('#toast1').click(function(){
+        Materialize.toast('Hello! I am Toast.',3000)
+      });
+      //ROUNDED TOAST
+      $('#toast2').click(function(){
+        Materialize.toast('Hello! I am rounded Toast.',3000, 'rounded')
+      });
+      //CALLBACK ON DISMISS
+      $('#toast3').click(function(){
+        Materialize.toast('Hello! I am Toast Dismissed.',800, '', function(){
+          alert('Hello I am the callback!')
+        })
+      });
 
 
 
